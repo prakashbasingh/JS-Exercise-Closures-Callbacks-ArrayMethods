@@ -165,8 +165,13 @@ function processDuplicateFree(list, callback) {
  * 
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function lowerCaseStrings(/* code here */) {
+function lowerCaseStrings(string) {
   /* code here */
+  let newLowerCaseArray = [];
+  string.forEach(function(item){
+    newLowerCaseArray.push(item.toLowerCase());
+  });
+  return newLowerCaseArray; 
 }
 
 /**
@@ -184,8 +189,17 @@ function lowerCaseStrings(/* code here */) {
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
+function isItAnApple(string) {
   /* code here */
+  let newArray = [];
+  for (let i = 0; i<string.length; i++){
+    if (string[i] === 'apple'){
+      newArray.push(true)
+    } else{
+      newArray.push(false);
+    }
+  }
+  return newArray;
 }
 
 /**
@@ -204,9 +218,13 @@ function isItAnApple(/* code here */) {
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
+function removeApple(string) {
   /* code here */
-}
+  
+   return string.filter(function(item){
+   return item !== 'apple';
+  });
+ }
 
 /**
  * ### Challenge `stringSmash`
@@ -223,8 +241,12 @@ function removeApple(/* code here */) {
  * 
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
-function stringSmash(/* code here */) {
+function stringSmash(string) {
   /* code here */
+  const smashed = string.reduce(function(accumulator,item){
+    return accumulator + item;
+  });
+  return smashed;
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
